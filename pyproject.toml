@@ -1,0 +1,9 @@
+[project]
+name = "tred-paper"
+version = "0.1.0"
+description = "BTC/USD order-flow research and Alpaca paper trading"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+tred = "tred.cli:main"

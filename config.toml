@@ -1,0 +1,32 @@
+# Exploratory rules; BTC/USD absorption/second-failure adaptation (SPEC_ORDERFLOW_UPGRADE.md).
+[market]
+symbol = "BTC/USD"
+signal_feed = "us-1"  # Kraken US, delivered by Alpaca
+execution_feed = "us" # Alpaca US paper quote reference
+watermark_seconds = 30
+max_quote_age_seconds = 60
+max_spread_bps = 15.0
+max_basis_bps = 30.0
+poll_seconds = 10
+
+[strategy]
+bar_seconds = 300
+profile_bars = 288
+row_size = 25.0
+imbalance_ratio = 4.0
+stacked_levels = 3
+minimum_level_volume = 0.001
+minimum_bar_trades = 20
+zone_rows = 2
+min_net_reward_risk = 1.2
+taker_fee = 0.0025
+slippage_bps = 5.0
+risk_fraction = 0.0025
+max_notional = 100.0
+daily_loss_fraction = 0.01
+max_holding_bars = 96
+max_consecutive_losses = 2
+
+[storage]
+database = "data/tred.sqlite3"
+execution_state = "data/paper-state.json"
